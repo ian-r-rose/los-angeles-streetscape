@@ -20,3 +20,7 @@ wheels/
 
 # mypy
 .mypy_cache/
+
+# osm-ish-files
+*.zip
+*.osm.pbf
