@@ -24,7 +24,7 @@ $(OSM_PBF):
 
 
 # Copy the OSM data into the database.
-osm: check-postgres
+osm: $(OSM_PBF) check-postgres
 	ogr2ogr -f PostgreSQL \
 					PG:"dbname='${POSTGRES_DB}' user='${POSTGRES_USER}' password='${POSTGRES_PASSWORD}' port='${POSTGRES_PORT}' host='${POSTGRES_HOST}'"\
 					-lco SCHEMA=osm -lco OVERWRITE=yes --config PG_USE_COPY YES $(OSM_PBF)
